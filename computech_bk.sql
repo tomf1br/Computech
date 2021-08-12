@@ -89,7 +89,7 @@ create table tbos (
     marca varchar(50) not null,
     serialNumber varchar(50),
     senha varchar(20),
-    acesorios varchar(150),
+    acessorios varchar(150),
     defeitoCli varchar(250) not null,
     diagnostico varchar(250),
     valor decimal(10,2),
@@ -102,7 +102,16 @@ create table tbos (
     foreign key(idcli) references tbcliente(idcli)
 );
 
+drop table tbos;
+select * from tbos;
+
 describe tbos;
+
+insert into tbos (tipoOs, statusOs, tecnico, modelo, marca, serialNumber, senha, acessorios, defeitoCli, diagnostico, valor, sinal, dataPrevista, dataRetirada, formPag, garantiaData, idCli) 
+values
+('Serviço','Orçamento Aprovado','Tiburcio','G3','Dell','123456789','102030','fonte','não liga','placa mãe',890,300,20210822, 20210830, 'Dinheiro',20211122, 3);
+
+
 
 create table tbTecnicos(
 idtec int primary key auto_increment,
@@ -111,6 +120,8 @@ nomeTec varchar(30) not null);
 select * from tbTecnicos;
 
 describe tbTecnicos;
+
+
 
 
 
